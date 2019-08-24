@@ -5,7 +5,7 @@ var modal = document.getElementById("simpleModal");
 var modalBtn = document.getElementById("modalBtn");
 
 // Get close button
-var closeBtn = document.querySelector(".closeBtn");
+var closeBtn = document.getElementsByClassName("closeBtn")[0];
 
 // Listen for open click
 modalBtn.addEventListener("click", openModal);
@@ -14,13 +14,12 @@ modalBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 
 // Listen for outside click
-window.addEventListener("click", clickOutside);
+window.addEventListener("click", outsideClick);
 
 // Function to open modal
 function openModal() {
-  //  we are selecting the CSS 'display' property from the modal class
-  // and changing it to 'block'
-  modal.style.display = "block";
+  modal.style.display =
+    "block"; /* notice how it makes the modal appear with a click */
 }
 
 // Function to close modal
@@ -28,9 +27,8 @@ function closeModal() {
   modal.style.display = "none";
 }
 
-// Function to close modal if we click outside of it
-function clickOutside(e) {
-  // we are making sure that the click is in fact outside the modal content window
+// Function to close modal if outside click
+function outsideClick(e) {
   if (e.target == modal) {
     modal.style.display = "none";
   }
