@@ -41,6 +41,7 @@ body {
 }
 
 .modal-header {
+  text-align: center;
   background: #4bffa5;
   padding: 15px;
   color: #040f3d;
